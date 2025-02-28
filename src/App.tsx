@@ -9,11 +9,11 @@ const App: Component = () => {
   )
 
   return (
-    <div class={'w-full h-full p-10 flex justify-center relative'}>
+    <>
       {quizState() === 'start' && (
-        <div class={'flex flex-col gap-8 size-max mb-8'}>
-          <h1 class={'text-center'}>Quizzz</h1>
-          <p class={'text-center'}>
+        <div class={'flex flex-col max-w-full pt-4'}>
+          <h1 class={'text-center mb-4'}>Quizzz</h1>
+          <p class={'text-center mb-4'}>
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam
             sapien sem, ornare ac, nonummy non, lobortis a enim. Proin in tellus
             sit amet nibh dignissim sagittis. Curabitur bibendum justo non orci.
@@ -38,12 +38,12 @@ const App: Component = () => {
         />
       )}
       {quizState() === 'end' && (
-        <div>
+        <div class={'pt-4'}>
           <div class={'text-[32px] font-bold text-center mb-12'}>Ho Ho Ho</div>
           <h1 class={'text-ex'}>Tvoje skóre je {store.score}</h1>
         </div>
       )}
-    </div>
+    </>
   )
 }
 

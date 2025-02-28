@@ -24,36 +24,36 @@
         --input-border: #3e405e;
         --spin-duration: 160s;
     }
-    * {
-    }
     html {
-        overflow-y: scroll;
-        @apply text-white;
+        height: 100%;
     }
     body {
         color: #3e3441;
-        margin-right: 0 !important;
-        height: 95vh;
+        min-height: 100%;
     }
     html,
     body {
-        height: 95vh;
+        margin: 0;
+        padding: 0;
     }
     #root {
-        height: 100%;
         background-color: #fff;
         background: linear-gradient(170deg, rgb(220, 230, 255), rgba(58, 49, 15, 0) 49%);
     }
     h1 {
-        @apply text-3xl font-bold mb-4;
+        @apply text-3xl font-bold;
     }
     h2 {
-        @apply text-2xl font-bold mb-2;
+        @apply text-2xl font-bold;
+    }
+
+    #root {
+        padding: 0 20px;
     }
 
     .questions {
         display: grid;
-        grid-template-rows: auto 1fr 40px;
+        grid-template-rows: max-content 1fr 100px;
         gap: 20px;
     }
 
