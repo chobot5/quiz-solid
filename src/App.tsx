@@ -1,7 +1,6 @@
 import { Component, createSignal } from 'solid-js'
 import { Button } from './Button'
 import { Questions } from './Questions'
-import { createStore } from 'solid-js/store'
 import { store } from './store'
 
 const App: Component = () => {

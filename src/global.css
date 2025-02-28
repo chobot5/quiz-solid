@@ -33,15 +33,16 @@
     body {
         color: #3e3441;
         margin-right: 0 !important;
-        background-color: #fff;
-        background: linear-gradient(170deg, rgb(220, 230, 255), rgba(58, 49, 15, 0) 49%);
+        height: 95vh;
     }
     html,
     body {
-        height: 100%;
+        height: 95vh;
     }
     #root {
         height: 100%;
+        background-color: #fff;
+        background: linear-gradient(170deg, rgb(220, 230, 255), rgba(58, 49, 15, 0) 49%);
     }
     h1 {
         @apply text-3xl font-bold mb-4;
@@ -52,7 +53,7 @@
 
     .questions {
         display: grid;
-        grid-template-rows: 30px 1fr 100px;
+        grid-template-rows: auto 1fr 100px;
     }
 
 }
