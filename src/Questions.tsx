@@ -25,7 +25,7 @@ export const Questions: Component<QuestionProps> = (props) => {
   // const question = createMemo(() => store()[currentQuestionIndex()])
 
   return (
-    <div class={'w-full h-full relative'}>
+    <div class={'w-full  relative'}>
       <div class={'w-full text-center questions'}>
         <div>
           <ProgressBar percentage={Math.floor(store.percentage * 100)} />
@@ -50,28 +50,30 @@ export const Questions: Component<QuestionProps> = (props) => {
             }))
           }}
         />
-      </div>
-      <div class={'flex items-end justify-center w-full absolute bottom-0'}>
-        <Show when={store.currentQuestionIndex === store.questions.length - 1}>
-          <Button
-            onClick={props.onShowResult}
-            label={'Vyhodnotit kvíz'}
-            disabled={!Boolean(store.userAnswers[store.currentQuestionIndex])}
-          />
-        </Show>
-        <Show
-          when={!(store.currentQuestionIndex === store.questions.length - 1)}
-        >
-          <Button
-            onClick={() =>
-              setStore((st) => ({
-                currentQuestionIndex: st.currentQuestionIndex + 1
-              }))
-            }
-            label={'Další otázka'}
-            disabled={!Boolean(store.userAnswers[store.currentQuestionIndex])}
-          />
-        </Show>
+        <div class={'flex items-end justify-center w-full'}>
+          <Show
+            when={store.currentQuestionIndex === store.questions.length - 1}
+          >
+            <Button
+              onClick={props.onShowResult}
+              label={'Vyhodnotit kvíz'}
+              disabled={!Boolean(store.userAnswers[store.currentQuestionIndex])}
+            />
+          </Show>
+          <Show
+            when={!(store.currentQuestionIndex === store.questions.length - 1)}
+          >
+            <Button
+              onClick={() =>
+                setStore((st) => ({
+                  currentQuestionIndex: st.currentQuestionIndex + 1
+                }))
+              }
+              label={'Další otázka'}
+              disabled={!Boolean(store.userAnswers[store.currentQuestionIndex])}
+            />
+          </Show>
+        </div>
       </div>
     </div>
   )

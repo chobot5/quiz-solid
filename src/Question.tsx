@@ -14,9 +14,9 @@ interface QuestionProps {
 
 export const Question: Component<QuestionProps> = (props) => {
   return (
-    <div class={'w-full h-full relative'}>
-      <img class={'w-[160px] m-auto my-8'} alt={''} src={img} />
-      <h2 class={'mb-8'}>{props.question.label}</h2>
+    <div class={'w-full'}>
+      <img class={'w-[120px] m-auto my-8'} alt={''} src={img} />
+      <h2 class={'mb-4'}>{props.question.label}</h2>
       <div>
         <ul class={'flex flex-col gap-2'}>
           <For each={props.question.answers}>
