@@ -1,0 +1,58 @@
+@import 'tailwindcss';
+
+@theme {
+
+}
+
+
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
+
+@layer base {
+    :root {
+        --primary: #c6bbff; /* #f87171 */
+        --primary-dark: #554688 /* #9c272f */;
+        --white: #e8e5e5;
+        --input: #2a2c43;
+        --input-border: #3e405e;
+        --spin-duration: 160s;
+    }
+    * {
+    }
+    html {
+        overflow-y: scroll;
+        @apply text-white;
+    }
+    body {
+        color: #3e3441;
+        margin-right: 0 !important;
+        background-color: #fff;
+        background: linear-gradient(170deg, rgb(220, 230, 255), rgba(58, 49, 15, 0) 49%);
+    }
+    html,
+    body {
+        height: 100%;
+    }
+    #root {
+        height: 100%;
+    }
+    h1 {
+        @apply text-3xl font-bold mb-4;
+    }
+    h2 {
+        @apply text-2xl font-bold mb-2;
+    }
+
+    .questions {
+        display: grid;
+        grid-template-rows: 30px 1fr 100px;
+    }
+
+}

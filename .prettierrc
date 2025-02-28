@@ -1,0 +1,11 @@
+{
+  "singleQuote": true,
+  "printWidth": 80,
+  "jsxSingleQuote": true,
+  "semi": false,
+  "trailingComma": "none",
+  "no-var-keyword": true,
+  "importOrder": ["<THIRD_PARTY_MODULES>","^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}
