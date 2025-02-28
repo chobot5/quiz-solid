@@ -8,12 +8,12 @@ export const [store, setStore] = createStore({
     return (this.currentQuestionIndex + 1) / this.questions.length
   },
   get score() {
-    return Object.values(this.userAnswers).filter(
-      (answerId) =>
-        this.questions[this.currentQuestionIndex].answers.find(
-          (answer) => answer.id === answerId
-        )?.correct
-    ).length
+    return this.questions.filter((question) => {
+      return (
+        this.userAnswers[question.id] ===
+        question.answers.find((answer) => answer.correct)?.id
+      )
+    }).length
   },
   userAnswers: {} as Record<number, number>,
   currentQuestionIndex: 0,

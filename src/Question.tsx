@@ -1,6 +1,5 @@
-import { Component, createMemo, createSignal, For, Show } from 'solid-js'
+import { Component, For } from 'solid-js'
 import { QuestionType } from './Questions'
-import { Button } from './Button'
 import { Answer } from './Answer'
 import img from './assets/question-img.svg'
 

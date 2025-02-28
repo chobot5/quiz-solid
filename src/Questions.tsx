@@ -31,12 +31,12 @@ export const Questions: Component<QuestionProps> = (props) => {
           <ProgressBar percentage={Math.floor(store.percentage * 100)} />
         </div>
         <Question
-          selectedAnswerId={store.userAnswers[store.currentQuestionIndex]}
+          selectedAnswerId={store.userAnswers[store.getCurrentQuestion.id]}
           onSelectAnswer={(answerId) =>
             setStore((st) => ({
               userAnswers: {
                 ...st.userAnswers,
-                [st.currentQuestionIndex]: answerId
+                [store.getCurrentQuestion.id]: answerId
               }
             }))
           }
@@ -57,7 +57,9 @@ export const Questions: Component<QuestionProps> = (props) => {
             <Button
               onClick={props.onShowResult}
               label={'Vyhodnotit kvíz'}
-              disabled={!Boolean(store.userAnswers[store.currentQuestionIndex])}
+              disabled={
+                !Boolean(store.userAnswers[store.getCurrentQuestion.id])
+              }
             />
           </Show>
           <Show
@@ -70,7 +72,9 @@ export const Questions: Component<QuestionProps> = (props) => {
                 }))
               }
               label={'Další otázka'}
-              disabled={!Boolean(store.userAnswers[store.currentQuestionIndex])}
+              disabled={
+                !Boolean(store.userAnswers[store.getCurrentQuestion.id])
+              }
             />
           </Show>
         </div>
