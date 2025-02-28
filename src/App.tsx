@@ -9,7 +9,7 @@ const App: Component = () => {
   )
 
   return (
-    <div class={'w-full h-full p-10 flex justify-center'}>
+    <div class={'w-full h-full p-10 flex justify-center relative'}>
       {quizState() === 'start' && (
         <div class={'flex flex-col gap-8 size-max mb-8'}>
           <h1 class={'text-center'}>Quizzz</h1>

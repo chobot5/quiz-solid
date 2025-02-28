@@ -53,7 +53,7 @@
 
     .questions {
         display: grid;
-        grid-template-rows: auto 1fr 100px;
+        grid-template-rows: auto 1fr;
     }
 
 }

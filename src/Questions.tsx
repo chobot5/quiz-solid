@@ -25,31 +25,33 @@ export const Questions: Component<QuestionProps> = (props) => {
   // const question = createMemo(() => store()[currentQuestionIndex()])
 
   return (
-    <div class={'w-full h-full text-center questions'}>
-      <div>
-        <ProgressBar percentage={Math.floor(store.percentage * 100)} />
+    <div class={'w-full h-full relative'}>
+      <div class={'w-full text-center questions'}>
+        <div>
+          <ProgressBar percentage={Math.floor(store.percentage * 100)} />
+        </div>
+        <Question
+          selectedAnswerId={store.userAnswers[store.currentQuestionIndex]}
+          onSelectAnswer={(answerId) =>
+            setStore((st) => ({
+              userAnswers: {
+                ...st.userAnswers,
+                [st.currentQuestionIndex]: answerId
+              }
+            }))
+          }
+          isLastQuestion={
+            store.currentQuestionIndex === store.questions.length - 1
+          }
+          question={store.getCurrentQuestion}
+          onNext={() => {
+            setStore((st) => ({
+              currentQuestionIndex: st.currentQuestionIndex + 1
+            }))
+          }}
+        />
       </div>
-      <Question
-        selectedAnswerId={store.userAnswers[store.currentQuestionIndex]}
-        onSelectAnswer={(answerId) =>
-          setStore((st) => ({
-            userAnswers: {
-              ...st.userAnswers,
-              [st.currentQuestionIndex]: answerId
-            }
-          }))
-        }
-        isLastQuestion={
-          store.currentQuestionIndex === store.questions.length - 1
-        }
-        question={store.getCurrentQuestion}
-        onNext={() => {
-          setStore((st) => ({
-            currentQuestionIndex: st.currentQuestionIndex + 1
-          }))
-        }}
-      />
-      <div class={'flex items-end justify-center'}>
+      <div class={'flex items-end justify-center w-full absolute bottom-0'}>
         <Show when={store.currentQuestionIndex === store.questions.length - 1}>
           <Button
             onClick={props.onShowResult}
