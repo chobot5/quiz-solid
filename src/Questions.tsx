@@ -24,7 +24,7 @@ export const Questions: Component<QuestionProps> = (props) => {
   // const question = createMemo(() => store()[currentQuestionIndex()])
 
   return (
-    <div class={'w-full text-center questions min-h-screen'}>
+    <div class={'w-full text-center questions min-h-dvh'}>
       <div class={'pt-4'}>
         <ProgressBar percentage={Math.floor(store.percentage * 100)} />
       </div>
