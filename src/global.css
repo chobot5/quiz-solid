@@ -35,6 +35,7 @@
     body {
         margin: 0;
         padding: 0;
+        overflow-x: hidden;
     }
     #root {
         background-color: #fff;
@@ -49,6 +50,30 @@
 
     #root {
         padding: 0 20px;
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateX(-100vw); /* Start completely off-screen */
+        }
+        to {
+            transform: translateX(0); /* Move to the final position */
+        }
+    }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+
+    .slide-in {
+        animation: slideIn 300ms ease-out forwards;
+    }
+
+
+    .fade-in {
+        animation: fadeIn 2000ms;
     }
 
     .questions {

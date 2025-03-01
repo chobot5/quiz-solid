@@ -24,7 +24,7 @@ export const Questions: Component<QuestionProps> = (props) => {
   // const question = createMemo(() => store()[currentQuestionIndex()])
 
   return (
-    <div class={'w-full text-center questions min-h-dvh'}>
+    <div class={'w-full text-center questions min-h-dvh relative'}>
       <div class={'pt-4'}>
         <ProgressBar percentage={Math.floor(store.percentage * 100)} />
       </div>
@@ -38,17 +38,12 @@ export const Questions: Component<QuestionProps> = (props) => {
             }
           }))
         }
-        isLastQuestion={
-          store.currentQuestionIndex === store.questions.length - 1
-        }
         question={store.getCurrentQuestion}
-        onNext={() => {
-          setStore((st) => ({
-            currentQuestionIndex: st.currentQuestionIndex + 1
-          }))
-        }}
       />
-      <div class={'flex items-start justify-center w-full'}>
+      <div
+        data-id={store.currentQuestionIndex}
+        class={'flex items-start justify-center w-full'}
+      >
         <Show when={store.currentQuestionIndex === store.questions.length - 1}>
           <Button
             onClick={props.onShowResult}
