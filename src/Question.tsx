@@ -10,18 +10,18 @@ interface QuestionProps {
 }
 
 export const Question: Component<QuestionProps> = (props) => {
-  const [mountedId, setMountedId] = createSignal<number | null>(null)
+  let rootDiv: HTMLDivElement
 
   createEffect(() => {
     const id = props.question.id
-    setMountedId(null)
+    rootDiv?.setAttribute('class', 'w-full fade-in')
     return setTimeout(() => {
-      setMountedId(id)
-    }, 2000)
-  })
+      rootDiv?.setAttribute('class', 'w-full')
+    }, 1000)
+  }, props.question.id)
 
   return (
-    <div class={mountedId() === null ? 'w-full fade-in' : 'w-full'}>
+    <div ref={rootDiv} class={'w-full'}>
       <img class={'m-auto w-[120px]'} alt={''} src={img} />
       <h2 class={'py-8'}>{props.question.label}</h2>
       <div>

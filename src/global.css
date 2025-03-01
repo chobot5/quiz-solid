@@ -73,7 +73,7 @@
 
 
     .fade-in {
-        animation: fadeIn 2000ms;
+        animation: fadeIn 1000ms;
     }
 
     .questions {
