@@ -22,6 +22,7 @@ const App: Component = () => {
             velit, sed quia non numquam eius modi tempora incidunt ut labore et
             dolore magnam aliquam quaerat voluptatem.
           </p>
+          <h2 class={'hacko text-center'}>xxxxxx</h2>
           <div class={'m-auto'}>
             <Button
               label={'Začit kvíz'}

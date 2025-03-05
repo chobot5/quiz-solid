@@ -14,14 +14,14 @@ export const Question: Component<QuestionProps> = (props) => {
 
   createEffect(() => {
     const id = props.question.id
-    rootDiv?.setAttribute('class', 'w-full fade-in')
+    rootDiv!.setAttribute('class', 'w-full fade-in')
     return setTimeout(() => {
-      rootDiv?.setAttribute('class', 'w-full')
+      rootDiv!.setAttribute('class', 'w-full')
     }, 1000)
   }, props.question.id)
 
   return (
-    <div ref={rootDiv} class={'w-full'}>
+    <div ref={rootDiv!} class={'w-full'}>
       <img class={'m-auto w-[120px]'} alt={''} src={img} />
       <h2 class={'py-8'}>{props.question.label}</h2>
       <div>
